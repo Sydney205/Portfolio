@@ -1083,29 +1083,8 @@ textarea {
   color: #fff;
 }
 
-/* ------------------------------------------ REACT APP CSS -------------------------------------------- */
 
-/* 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-
- */
+/* On Smaller Screen */
 
 @media screen and (max-width: 850px) {
   .my-logo {
@@ -1233,7 +1212,7 @@ textarea {
   }
 
   .projects-section .pro-image {
-    width: 40vw;
+    width: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1244,7 +1223,7 @@ textarea {
   .projects-section .pro-image img {
     width: 70vw;
     height: 30vh;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
   }
 
   .contact-section {
