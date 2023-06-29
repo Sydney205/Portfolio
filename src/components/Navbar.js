@@ -78,7 +78,7 @@ const Navbar = () => {
         </ul>
         <div color="white" className="nav-contact">
           <a
-            href="https://github.com/Sydney205"
+            href="https://web.facebook.com/people/Dieke-Sydney/100081882726090/"
             target={"_blank"}
             rel={"noreferrer"}
             className="facebook-link"
@@ -151,7 +151,7 @@ const Navbar = () => {
         </ul>
         <div color="white" className="nav-contact">
           <a
-            href="https://github.com/Sydney205"
+            href="https://web.facebook.com/people/Dieke-Sydney/100081882726090/"
             target={"_blank"}
             rel={"noreferrer"}
             className="facebook-link"
@@ -159,7 +159,7 @@ const Navbar = () => {
             <FaFacebook /> Facebook
           </a>
           <a
-            href="https://web.facebook.com/people/Dieke-Sydney/100081882726090/"
+            href="https://github.com/Sydney205"
             target={"_blank"}
             rel={"noreferrer"}
             className="github-link"

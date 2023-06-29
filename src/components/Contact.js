@@ -3,7 +3,7 @@ import Typed from "react-typed";
 import emailjs from "@emailjs/browser";
 import { FaPen, FaInfoCircle, FaJava, FaCheckDouble } from "react-icons/fa";
 import { MdEmail, MdPerson } from "react-icons/md";
-import Footer from './Footer';
+import Footer from "./Footer";
 
 // Regular Expressions...
 const USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_ ]{2,23}$/;
@@ -70,14 +70,14 @@ const Contact = () => {
         },
         (error) => {
           alert("Not Sent!.. Try again!");
-          setErrMsg('Message not sent!')
+          setErrMsg("Message not sent!");
         }
       );
   };
 
   return (
     <>
-            <p className="contact-topic">&#123; 05. Contact me &#125;</p>
+      <p className="contact-topic">&#123; 05. Contact me &#125;</p>
 
       {/* Success Page */}
 
@@ -107,167 +107,177 @@ const Contact = () => {
               How would you like your coffee{" "}
               <FaJava color="var(--invalid)" size={"3rem"} />
             </p>
-            <p className="text-center" id="orange">Send an Email...</p>
+            <p className="text-center" id="orange">
+              Send an Email...
+            </p>
 
             {/* -------------------------------------THE FORM----------------------------------- */}
-<div className='contact-info'>
-            <p
-              ref={errRef}
-              className={errMsg ? "errmsg" : "offscreen"}
-              aria-live="assertive"
-            >
-              {errMsg}
-            </p>
-            {/* The Form... */}
-
-            <form ref={form}>
-              {/* Name Input... */}
-
-              <div
-                className={
-                  userFocus && user && !validName
-                    ? "inputBox_F"
-                    : !userFocus && !validName && user
-                    ? "inputBox_E"
-                    : "inputBox"
-                }
-                id='input-div'
-              >
-                <br />
-                <input
-                  type={"text"}
-                  id="user_name"
-                  name="user_name"
-                  ref={userRef}
-                  autoComplete="off"
-                  onChange={(e) => setUser(e.target.value)}
-                  required
-                  aria-invalid={validName ? "false" : "true"}
-                  aria-describedby="uidnote"
-                  onFocus={() => setUserFocus(true)}
-                  onBlur={() => setUserFocus(false)}
-                />
-                <span className="placeholder"><MdPerson /> Name</span>
-              </div>
-              <br />
-
-              {/* Warnings... */}
-
+            <div className="contact-info">
               <p
-                id="uidnote"
-                className={
-                  !userFocus && !validName && user
-                    ? "instructions"
-                    : "offscreen"
-                }
+                ref={errRef}
+                className={errMsg ? "errmsg" : "offscreen"}
+                aria-live="assertive"
               >
-                <FaInfoCircle />{" "} Your name's too short
+                {errMsg}
               </p>
+              {/* The Form... */}
 
-              {/* Email Input... */}
+              <form ref={form}>
+                {/* Name Input... */}
 
-              <div
-                className={
-                  emailFocus && email && !validEmail
-                    ? "inputBox_F"
-                    : !emailFocus && !validEmail && email
-                    ? "inputBox_E"
-                    : "inputBox"
-                }
-                id='input-div'
-              >
-                <br />
-                <input
-                  type={"email"}
-                  id="user_email"
-                  name="user_email"
-                  ref={emailRef}
-                  autoComplete="on"
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  aria-invalid={validEmail ? "false" : "true"}
-                  aria-describedby="emailnote"
-                  onFocus={() => setEmailFocus(true)}
-                  onBlur={() => setEmailFocus(false)}
-                />
-                <span className="placeholder"><MdEmail /> Email</span>
-              </div>
-
-              {/* Warnings... */}
-
-              <br />
-              <p
-                id="emailnote"
-                className={
-                  !emailFocus && !validEmail && email
-                    ? "instructions"
-                    : "offscreen"
-                }
-              >
-                <FaInfoCircle />{" "}
-                Invalid email format
-              </p>
-
-              {/* Message textarera .. */}
-
-              <div
-                className={
-                  messaeFocus && message && !validMessage
-                    ? "inputBox_F"
-                    : !messaeFocus && !validMessage && message
-                    ? "inputBox_E"
-                    : "inputBox"
-                }
-                id='textarea-div'
-              >
-                <br />
-                <textarea
-                  type={"text"}
-                  id="message"
-                  name="message"
-                  ref={messageRef}
-                  onChange={(e) => setMessage(e.target.value)}
-                  required
-                  aria-invalid={validMessage ? "false" : "true"}
-                  aria-describedby="messagenote"
-                  onFocus={() => setMessaeFocus(true)}
-                  onBlur={() => setMessaeFocus(false)}
-                ></textarea>
-                <span className="placeholder"><FaPen /> Message</span>{" "}
-              </div>
-
-              {/* Warnings... */}
-
-              <p
-                id="messagenote"
-                className={
-                  !messaeFocus && !validMessage && message
-                    ? "instructions"
-                    : "offscreen"
-                }
-              >
-                <FaInfoCircle /> minimum of 10 characters and maximun of 100
-                characters
-              </p>
-              <br />
-
-              {/* Button... */}
-
-              <div className="contact-btn">
-                <button
-                  disabled={
-                    !validName || !validEmail || !validMessage ? true : false
+                <div
+                  className={
+                    userFocus && user && !validName
+                      ? "inputBox_F"
+                      : !userFocus && !validName && user
+                      ? "inputBox_E"
+                      : "inputBox"
                   }
-                  onClick={sendEmail}
-                  type="submit"
-                  className="send-btn"
+                  id="input-div"
                 >
-                  Submit
-                </button>
+                  <br />
+                  <input
+                    type={"text"}
+                    id="user_name"
+                    name="user_name"
+                    ref={userRef}
+                    autoComplete="off"
+                    onChange={(e) => setUser(e.target.value)}
+                    required
+                    aria-invalid={validName ? "false" : "true"}
+                    aria-describedby="uidnote"
+                    onFocus={() => setUserFocus(true)}
+                    onBlur={() => setUserFocus(false)}
+                  />
+                  <span className="placeholder">
+                    <MdPerson /> Name
+                  </span>
                 </div>
-            </form>
-          <img src={`${process.env.PUBLIC_URL}/images/email-photo.PNG`} alt='email' />
-          </div>
+                <br />
+
+                {/* Warnings... */}
+
+                <p
+                  id="uidnote"
+                  className={
+                    !userFocus && !validName && user
+                      ? "instructions"
+                      : "offscreen"
+                  }
+                >
+                  <FaInfoCircle /> Your name's too short
+                </p>
+
+                {/* Email Input... */}
+
+                <div
+                  className={
+                    emailFocus && email && !validEmail
+                      ? "inputBox_F"
+                      : !emailFocus && !validEmail && email
+                      ? "inputBox_E"
+                      : "inputBox"
+                  }
+                  id="input-div"
+                >
+                  <br />
+                  <input
+                    type={"email"}
+                    id="user_email"
+                    name="user_email"
+                    ref={emailRef}
+                    autoComplete="on"
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    aria-invalid={validEmail ? "false" : "true"}
+                    aria-describedby="emailnote"
+                    onFocus={() => setEmailFocus(true)}
+                    onBlur={() => setEmailFocus(false)}
+                  />
+                  <span className="placeholder">
+                    <MdEmail /> Email
+                  </span>
+                </div>
+
+                {/* Warnings... */}
+
+                <br />
+                <p
+                  id="emailnote"
+                  className={
+                    !emailFocus && !validEmail && email
+                      ? "instructions"
+                      : "offscreen"
+                  }
+                >
+                  <FaInfoCircle /> Invalid email format
+                </p>
+
+                {/* Message textarera .. */}
+
+                <div
+                  className={
+                    messaeFocus && message && !validMessage
+                      ? "inputBox_F"
+                      : !messaeFocus && !validMessage && message
+                      ? "inputBox_E"
+                      : "inputBox"
+                  }
+                  id="textarea-div"
+                >
+                  <br />
+                  <textarea
+                    type={"text"}
+                    id="message"
+                    name="message"
+                    ref={messageRef}
+                    onChange={(e) => setMessage(e.target.value)}
+                    required
+                    aria-invalid={validMessage ? "false" : "true"}
+                    aria-describedby="messagenote"
+                    onFocus={() => setMessaeFocus(true)}
+                    onBlur={() => setMessaeFocus(false)}
+                  ></textarea>
+                  <span className="placeholder">
+                    <FaPen /> Message
+                  </span>{" "}
+                </div>
+
+                {/* Warnings... */}
+
+                <p
+                  id="messagenote"
+                  className={
+                    !messaeFocus && !validMessage && message
+                      ? "instructions"
+                      : "offscreen"
+                  }
+                >
+                  <FaInfoCircle /> minimum of 10 characters and maximun of 100
+                  characters
+                </p>
+                <br />
+
+                {/* Button... */}
+
+                <div className="contact-btn">
+                  <button
+                    disabled={
+                      !validName || !validEmail || !validMessage ? true : false
+                    }
+                    onClick={sendEmail}
+                    type="submit"
+                    className="send-btn"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+              <img
+                src={`${process.env.PUBLIC_URL}/images/email-photo.PNG`}
+                alt="email"
+              />
+            </div>
           </div>
         </section>
       )}
