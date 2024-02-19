@@ -1161,7 +1161,8 @@ textarea {
   }
 
   .about-section .right-side {
-    width: 90vw !important;
+    width: 100vw !important;
+    padding: 1rem;
   }
 
   .skills-section {
